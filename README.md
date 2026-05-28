@@ -15,7 +15,7 @@ pinned: false
 
 ---
 
-## 🧒 Explain It Like I'm 10
+## 💡 What This Project Does
 
 Imagine you have **two students** — one who studied a little (small model) and one who studied a lot (big model). You give both the **same test questions** and a **third person grades both papers fairly**.
 
