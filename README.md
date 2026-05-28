@@ -28,6 +28,28 @@ That's exactly what this project does — but with AI models.
 You type one question → both AIs answer at the same time → judge scores both → you see who did better and **why**.
 
 ---
+## ⚡ Why This Project Runs Differently
+
+Most AI projects take a full day just to get running locally — downloading model weights, setting up CUDA, fixing dependency conflicts, running out of RAM. This project is intentionally built to avoid all of that.
+
+**Local setup takes under 5 minutes:**
+- No model downloads — both models run via API calls
+- No GPU required — runs on any laptop including low-end ones
+- No complex dependencies — pure Python, one `pip install` command
+- No Docker needed locally — just `uvicorn main:app` and it works
+
+**Deployment is one push:**
+- No server configuration — Dockerfile handles everything
+- No environment setup on the server — just add one secret key
+- No build pipeline — HF Spaces builds automatically on git push
+- No downtime — updates go live in 3 minutes with another push
+
+**Why this matters:**
+Most AI projects couple the model to the infrastructure — if the model changes, everything breaks. This project separates them completely. Swapping OSS model from Llama 8B to Mistral or Qwen is one line in `.env`. Swapping the frontier model is one line in `frontier.py`. The evaluation, memory, guardrails, and UI stay exactly the same.
+
+That's the architectural decision that makes everything else fast — the model is just a plug-in, not the foundation.
+
+---
 
 ## ❌ The Problem
 
